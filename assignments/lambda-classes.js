@@ -39,3 +39,29 @@ class Instructor extends Person{
 
 
 }
+
+class Student extends Person{
+    constructor(attr){
+        super(attr);
+        this.previousBackground = attr.previousBackground;
+        this.className = attr.className;
+        this.favSubjects = attr.favSubjects;
+    }
+
+    listsSubjects(){
+        const subjects = this.favSubjects;
+        subjects.array.forEach(element => {
+            console.log(element);
+        });
+    }
+
+    PRAssignment(subject){
+        console.log(`${student.name} has submitted a PR for ${subject}`);
+
+    }
+
+    sprintChallenge(sprint){
+        console.log(`${student.name} has begun sprint challenge on ${sprint}`);
+
+    }
+}
