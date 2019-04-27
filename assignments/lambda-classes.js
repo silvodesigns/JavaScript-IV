@@ -1,9 +1,9 @@
 // CODE here for your Lambda Classes
 class Person {
     constructor(attr){
-        this.name = attrs.name;
-        this.age = attrs.age;
-        this.location = attrs.location;
+        this.name = attr.name;
+        this.age = attr.age;
+        this.location = attr.location;
 
         
     }
@@ -50,18 +50,52 @@ class Student extends Person{
 
     listsSubjects(){
         const subjects = this.favSubjects;
-        subjects.array.forEach(element => {
+        subjects.forEach(element => {
             console.log(element);
         });
     }
 
     PRAssignment(subject){
-        console.log(`${student.name} has submitted a PR for ${subject}`);
+        console.log(`${this.name} has submitted a PR for ${subject}`);
 
     }
 
     sprintChallenge(sprint){
-        console.log(`${student.name} has begun sprint challenge on ${sprint}`);
+        console.log(`${this.name} has begun sprint challenge on ${sprint}`);
 
     }
 }
+
+class PM extends Instructor{
+    constructor(attr){
+        super(attr);
+        this.gradClassName = attr.gradClassName;
+        this.favInstructor = attr.favInstructor;
+    }
+
+    standUp(channel){
+        console.log(`${PM.name} announces to ${channel}, @channel standy times!​​​​​`);
+    }
+
+    debugsCode(subject, student){
+        console.log(`${PM.name} debugs ${student.name}'s code on ${subject}`);
+
+    }
+}
+
+
+const kevinSilvestre = new Student({
+    name: "Kevin Silvestre",
+    age: 25,
+    location: "Boston,MA",
+    previousBackground: "Design",
+    className: "WPT16",
+    favSubjects: ['HTML', 'CSS','JS']
+
+  });
+  
+
+console.log(kevinSilvestre);
+kevinSilvestre.listsSubjects();
+kevinSilvestre.PRAssignment("HTML");
+kevinSilvestre.sprintChallenge("Advanced CSS");
