@@ -72,7 +72,7 @@ Prototype Refactor
 //     return `${this.name} took damage`;
 //   }
 
-  class ChracterStats extends GameObject{
+  class CharacterStats extends GameObject{
       constructor(hp){
         super(hp);
         this.healthPoints = hp.healthPoints;
@@ -108,7 +108,7 @@ Prototype Refactor
 //   }
    
 
-  class Humanoid extends GameObject{
+  class Humanoid extends CharacterStats{
       constructor(attr){
           super(attr);
           this.team = attr.team;
@@ -120,7 +120,7 @@ Prototype Refactor
       greet(){
         return `${this.name} offers a greeting in ${this.language}`;
       }
-       
+
   }
   /*
     * Inheritance chain: GameObject -> CharacterStats -> Humanoid
